@@ -11,7 +11,7 @@ Building Darknet
 sudo apt-get install build-essential git libopencv-dev
 3) git clone https://github.com/AlexeyAB/darknet.git
 4) cd darknet
-5) (Go to Makefile) - set GPU, CUDNN, AVX, OPENMP, LIBSO to 1
+5) (Go to Makefile) - set GPU, CUDNN, AVX, OPENMP, LIBSO to 1 (if you have GPU, if not, see the Makefile explaination)
 6) (In the Makefile) - uncomment the line (ARCH = ...) for whichever GPU you use (if you have one)
 7) make
 8) sudo cp libdarknet.so /usr/local/lib/
