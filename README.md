@@ -32,3 +32,11 @@ Building Darkhelp (previous directory of darknet)
 Use in the application
 1) #include <DarkHelp.hpp>
 2) link these libraries: libdarkhelp.a, libdarknet.so, OpenCV with the Make file provided
+
+
+To use the Cmake
+1) cd into the Released directory (make sure all the previous steps are finish)
+2) cmake ..
+
+To use the make in the released directory
+1) make
