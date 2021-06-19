@@ -25,5 +25,5 @@ int main () {
     }
     vid.release();
 
-    // destuctor somewhere?
+    // destructor for the "detector" somewhere?
 }
