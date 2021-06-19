@@ -22,19 +22,20 @@ std::tuple<float, float> Detector::DetectLive(cv::Mat &input) {
     int screen_width = 416;
     int screen_height = 416;
     cv::Mat raw;
-
-        // camera values
+	//  WE MAY NOT NEED THIS SINCE WE ARE NOT USING THE HIGH SPEED CAMERA
+        // camera values     
 	    // WARNING: NEED TO BE UPDATED WITH ACTUAL VALUES -----------------------------------------------------------------
-	    int camera_res[2] = {1280, 1024};
-	    int camera_fov[2] = {90, 90};
-	    int camera_midpoint[2] = {camera_res[0]/2, camera_res[1]/2};
+// 	    int camera_res[2] = {1280, 1024};
+// 	    int camera_fov[2] = {90, 90};
+// 	    int camera_midpoint[2] = {camera_res[0]/2, camera_res[1]/2};
 	    // WARNING: NEED TO BE UPDATED WITH ACTUAL VALUES -----------------------------------------------------------------
     
     cv::resize(input, raw, cv::Size(screen_width, screen_height));
 
         // load the neural network (config, weights, and class names)
         // DarkHelp darkhelp(CONFIGFILE, WEIGHTSFILE, NAMESFILE);
-
+	
+	// set up variables for choosing armor closest to center
         int center_x = screen_width / 2;
         int center_y = screen_height / 2;
         int final_armor_x = 0;
@@ -61,7 +62,7 @@ std::tuple<float, float> Detector::DetectLive(cv::Mat &input) {
                 final_armor_height = detection.rect.height;
         }
     }       
-            
+            // check if finalarmor is found
             if (closest_to_center != DBL_MAX) {
                 #ifdef DEBUG
                 cv::Rect rect (final_armor_x, final_armor_y, final_armor_width, final_armor_height);
@@ -70,8 +71,9 @@ std::tuple<float, float> Detector::DetectLive(cv::Mat &input) {
                 float final_center_x = final_armor_x + final_armor_width / 2;
                 float final_center_y = final_armor_y + final_armor_height / 2;
                 return std::make_tuple(final_center_x, final_center_y);
+		// return x-y coords. of final armor (best armor)  CHANGE THE RETURN INFO. ACCORDINGLY!!
             }
-           
+        // return this if final armor not found 
         input = raw;
         return std::make_tuple(std::numeric_limits<float>::max(), std::numeric_limits<float>::max());
 
