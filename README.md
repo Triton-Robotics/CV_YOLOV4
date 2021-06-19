@@ -4,6 +4,14 @@ To get the config, weight and name file: https://drive.google.com/drive/u/1/fold
 
 Setup tutorial: https://www.ccoderun.ca/DarkHelp/api/Building.html#Linux -->  0:00 - 3:40
 
+## CUDA >= 10.2 
+Download CUDA: https://developer.nvidia.com/cuda-toolkit-archive
+Tutorial: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
+
+## cuDNN >= 8.0.2
+Download cuDNN: https://developer.nvidia.com/rdp/cudnn-archive
+Tutorial: https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#installlinux-tar
+
 ## Building Darknet
 
 1) (make a directory) 
