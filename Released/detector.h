@@ -11,7 +11,7 @@ public:
     Detector();
     ~Detector() = default;
 
-    std::tuple<float, float> DetectLive(cv::Mat &input);
+    std::tuple<float, float> DetectLive(cv::Mat &input, DarkHelp &darkhelp);
 
 private:
     static cv::Mat* addr;
