@@ -4,7 +4,7 @@ To get the config, weight and name file: https://drive.google.com/drive/u/1/fold
 
 Setup tutorial: https://www.ccoderun.ca/DarkHelp/api/Building.html#Linux -->  0:00 - 3:40
 
-Building Darknet
+## Building Darknet
 
 1) (make a directory) 
 2) get openCV installed in the same directory (skip if installed)
@@ -18,7 +18,7 @@ sudo apt-get install build-essential git libopencv-dev
 9) sudo cp include/darknet.h /usr/local/include/
 10) sudo ldconfig
 
-Building Darkhelp (previous directory of darknet)
+## Building Darkhelp (previous directory of darknet)
 1) sudo apt-get install cmake build-essential libtclap-dev libmagic-dev libopencv-dev
 2) git clone https://github.com/stephanecharette/DarkHelp.git
 3) cd DarkHelp
@@ -29,14 +29,17 @@ Building Darkhelp (previous directory of darknet)
 8) make package 
 9) sudo dpkg -i darkhelp-*.deb
 
-Use in the application
+## Use in the application
 1) #include <DarkHelp.hpp>
 2) link these libraries: libdarkhelp.a, libdarknet.so, OpenCV with the Make file provided
 
 
-To use the Cmake
-1) cd into the Released directory (make sure all the previous steps are finish)
+## To use the Cmake
+1) cd into the build directory (make sure all the previous steps are finish)
 2) cmake ..
 
-To use the make in the released directory
+## To use the make in the build directory
 1) make
+
+## To use the detector in the build directory
+input format: ./detector "config file" "weights file" "name file" "input name"
