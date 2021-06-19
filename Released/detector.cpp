@@ -9,14 +9,14 @@
 #define WEIGHTSFILE "blue_armor.weights"  // change according to the color
 #define NAMESFILE "blue_armor.names"      // of the opponent
     
-cv::Mat* Detector::addr = NULL;
+cv::Mat* Detector::addr = NULL;	// THIS WAS IN THE Original Sentry code, IS IT USEFUL?
 
     Detector::Detector() {
 
 }
 
 // load the neural network (config, weights, and class names)
-DarkHelp darkhelp(CONFIGFILE, WEIGHTSFILE, NAMESFILE);
+DarkHelp darkhelp(CONFIGFILE, WEIGHTSFILE, NAMESFILE); // WHERE SHOULD I PUT THIS LINE SO I ONLY CREATE THE OBJECT ONCE
 
 std::tuple<float, float> Detector::DetectLive(cv::Mat &input) {
     int screen_width = 416;
